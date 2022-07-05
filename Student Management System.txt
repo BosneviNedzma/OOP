@@ -1,0 +1,67 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+class Student{
+    private:
+int rollno;
+char name[20];
+char gender[20];
+int age;
+int std;
+
+public:
+
+void getData(){
+ cout<<"Student Details\n";
+    cout<<"Roll No. : ";
+    cin>>rollno;
+    cout<<"Name     :";
+    cin>>name;
+    cout<<"Gender   :";
+    cin>>gender;
+    cout<<"Age      :";
+    cin>>age;
+    cout<<"Standdard: ";
+    cin>>std;
+
+}
+
+void heading(){
+    cout<<setf(ios::left);
+    cout<<setw(10)<<"Roll No.";
+    cout<<setw(20)<<"Name";
+    cout<<setw(10)<<"Gender";
+    cout<<setw(5)<<"Age";
+    cout<<setw(5)<<"Std";
+    cout<<endl;
+}
+
+void listData(){
+      cout<<setf(ios::left);
+    cout<<setw(10)<<rollno;
+    cout<<setw(20)<<name;
+    cout<<setw(10)<<gender;
+    cout<<setw(5)<<age;
+    cout<<setw(5)<<std;
+    cout<<endl;
+}
+};
+
+int main(){
+Student s[10];
+int i;
+for(int i=0; i<10; i++){
+    cout<<"Enter the Details for Record No. : "<<i+1<<endl;
+    s[i]=getData();
+}
+s[0].heading();
+for(int i=0; i<4; i++){
+    cout<<"Details for Record No. : "<<i+1<<endl;
+    s[i]=listData();
+}
+
+
+
+    return 0;
+}
